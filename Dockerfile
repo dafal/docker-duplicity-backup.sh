@@ -1,5 +1,4 @@
-
-FROM alpine:3.7
+FROM alpine:3.8
 
 RUN set -x \
  && apk add --no-cache \
@@ -36,8 +35,9 @@ RUN apk add --no-cache --virtual build-deps \
     libffi-dev \
     openssl-dev \
     py-setuptools \
-    py-pip \
- && pip install --trusted-host pypi.python.org \
+    py-pip
+RUN pip install --upgrade pip
+RUN pip install --trusted-host pypi.python.org \
     fasteners \
     gsutil \
     s3cmd \
