@@ -1,10 +1,11 @@
 FROM alpine:3.8
 
+RUN apk add --no-cache duplicity
+
 RUN set -x \
  && apk add --no-cache \
     coreutils \
     ca-certificates \
-    duplicity \
     openssh \
     openssl \
     rsync \
