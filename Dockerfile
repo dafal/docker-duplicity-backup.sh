@@ -1,6 +1,7 @@
 FROM alpine:3.8
 
-RUN apk add --no-cache duplicity=0.7.17-r1
+RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
+RUN apk add --no-cache duplicity@edge
 
 RUN set -x \
  && apk add --no-cache \
