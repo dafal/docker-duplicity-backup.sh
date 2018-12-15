@@ -1,6 +1,6 @@
 FROM alpine:3.8
 
-RUN apk add --no-cache duplicity
+RUN apk add --no-cache duplicity=0.7.17-r1
 
 RUN set -x \
  && apk add --no-cache \
